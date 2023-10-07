@@ -1,9 +1,19 @@
-import React, {useReducer} from "react";
+import React, { useReducer } from "react";
+
+type State = {
+  isRequestInProgress: boolean
+  requestStep: string
+}
+
+type Action = {
+  type: string
+}
 
 const initialState: State = {
   isRequestInProgress: false,
   requestStep: 'idle',
 };
+
 
 function requestReducer(state: State, action: Action): State {
   switch (action.type) {
