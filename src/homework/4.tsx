@@ -1,14 +1,14 @@
-import React, { createContext, useMemo, useState, useContext } from "react";
+import React, { createContext, useMemo, useState, useContext, ReactNode} from "react";
 import noop from "lodash/noop";
 
 type MenuIds = "first" | "second" | "last";
 type Menu = { id: MenuIds; title: string };
 
-// Додати тип Menu Selected
 
 type SelectedMenu = {
-  id: MenuIds | {}
-}
+  id: MenuIds 
+} 
+
 type MenuSelected = {
   selectedMenu: SelectedMenu
 }
@@ -17,7 +17,7 @@ type MenuAction = {
 onSelectedMenu(selectedMenu: SelectedMenu):void
 }
 type PropsProvider = {
-  children: React.ReactNode; // Додати тип для children
+  children: ReactNode; // Додати тип для children
 };
 type PropsMenu = {
   menus: Menu[]; // Додайте вірний тип для меню
